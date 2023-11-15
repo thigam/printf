@@ -7,7 +7,8 @@ int _printf(const char *format, ...);
 int _putchar(char ch);
 int _printchar(va_list var_list);
 int _printstr(va_list var_list);
-struct matcher {
+struct matcher
+{
 	char c;
 	int (*ptr)(va_list);
 };

@@ -13,8 +13,8 @@ int _printstr(va_list var_list)
 
 	while (string[counter])
 	{
-    	_putchar(string[counter]);
-    	counter++;
+		_putchar(string[counter]);
+		counter++;
 	}
 	return (0);
 }

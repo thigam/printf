@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 	int len = 0;
 	int looper;
 	matcher_t func_list[] = {
-         	{'c', _printchar},
-         	{'s', _printstr},
+		{'c', _printchar},
+		{'s', _printstr},
 	};
 
 	va_start(var_list, format);
@@ -23,23 +23,23 @@ int _printf(const char *format, ...)
 
 	while (format[counter])
 	{
-   	if (format[counter] == '%')
-   	{
-        	for(looper = 0; looper < 2; looper++)
-        	{
-            	if (func_list[looper].c == format[counter + 1])
-            	func_list[looper].ptr(var_list);
-        	}
-       	if (format[counter + 1] == '%')
-       	{
-           	_putchar('%');
-       	}
-        	counter+=2;
-        	continue;
-   	}
-   	len++;
-    	_putchar(format[counter]);
-    	counter++;
+		if (format[counter] == '%')
+		{
+			for (looper = 0; looper < 2; looper++)
+			{
+				if (func_list[looper].c == format[counter + 1])
+					func_list[looper].ptr(var_list);
+			}
+			if (format[counter + 1] == '%')
+			{
+				_putchar('%');
+			}
+			counter += 2;
+			continue;
+		}
+		len++;
+		_putchar(format[counter]);
+		counter++;
 	}
 va_end(var_list);
 return (len);
