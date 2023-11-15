@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 	matcher_t func_list[] = {
 		{'c', _printchar},
 		{'s', _printstr},
+		{'d', _printint},
+		{'i', _printint},
 	};
 
 	va_start(var_list, format);
@@ -25,7 +27,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[counter] == '%')
 		{
-			for (looper = 0; looper < 2; looper++)
+			for (looper = 0; looper < 4; looper++)
 			{
 				if (func_list[looper].c == format[counter + 1])
 					func_list[looper].ptr(var_list);
