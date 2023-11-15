@@ -16,9 +16,6 @@ int _printf(const char *format, ...)
 	matcher_t func_list[] = {
          	{'c', _printchar},
          	{'s', _printstr},
-         	{'d', _printint},
-         	{'i', _printint},
-         	{'b', _printbin},
 	};
 
 	va_start(var_list, format);
