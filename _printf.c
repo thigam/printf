@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 	{
    	if (format[counter] == '%')
    	{
-        	for(looper = 0; looper < 5; looper++)
+        	for(looper = 0; looper < 2; looper++)
         	{
             	if (func_list[looper].c == format[counter + 1])
             	func_list[looper].ptr(var_list);
