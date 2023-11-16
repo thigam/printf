@@ -10,7 +10,7 @@
 int _printint(va_list var_list)
 {
 	int numb = va_arg(var_list, int);
-	int counter_pow, last, temp_pow, digit, temp_numb, pow = 0;
+	int counter_pow, last, temp_pow, digit, temp_numb, pow = 0, len = 0;
 
 	if (numb < 0)
 	{
@@ -33,11 +33,13 @@ int _printint(va_list var_list)
 			temp_numb /= 10;
 		}
 		digit = temp_numb % 10;
+		len++;
 		_putchar(digit + '0');
 		temp_pow = pow - 1;
 		temp_numb = numb;
 	}
 	last = numb % 10;
+	len++;
 	_putchar(last + '0');
-	return (0);
+	return (len);
 }

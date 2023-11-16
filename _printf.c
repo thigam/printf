@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			for (looper = 0; looper < 4; looper++)
 			{
 				if (func_list[looper].c == format[counter + 1])
-					func_list[looper].ptr(var_list);
+					len += func_list[looper].ptr(var_list);
 			}
 			if (format[counter + 1] == '%')
 			{

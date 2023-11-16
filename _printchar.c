@@ -10,6 +10,6 @@ int _printchar(va_list var_list)
 {
 	char ch = va_arg(var_list, int);
 	_putchar(ch);
-	return (0);
+	return (1);
 }
 

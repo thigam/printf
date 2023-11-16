@@ -16,5 +16,5 @@ int _printstr(va_list var_list)
 		_putchar(string[counter]);
 		counter++;
 	}
-	return (0);
+	return (counter);
 }
