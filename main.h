@@ -14,4 +14,5 @@ struct matcher
 	int (*ptr)(va_list);
 };
 typedef struct matcher matcher_t;
+int print_bin(va_list val);
 #endif

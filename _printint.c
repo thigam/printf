@@ -14,7 +14,7 @@ int _printint(va_list var_list)
 
 	if (numb < 0)
 	{
-		numb * = -1;
+		numb *= -1;
 		_putchar(45);
 	}
 	temp_numb = numb;
