@@ -1,34 +1,34 @@
 #include "main.h"
 
 /**
- * print_bin - prints a  binary number.
+ * _printbin - prints a  binary number.
  * @val: parameter.
  * Return: integer
  */
-int print_bin(va_list val)
+int _printbin(va_list var_list)
 {
-	int flag = 0;
-	int count = 0;
-	int i, a = 1, b;
-	unsigned int num = va_arg(val, unsigned int);
-	unsigned int p;
+	int lag = 0;
+	int number = 0;
+	int i, z = 1, b;
+	unsigned int num = va_arg(var_list, unsigned int);
+	unsigned int n;
 
 	for (i = 0; i < 32; i++)
 	{
-		p = ((a << (31 - i)) & num);
-		if (p >> (31 - i))
-			flag = 1;
-		if (flag)
+		n = ((z << (31 - i)) & num);
+		if (n >> (31 - i))
+			lag = 1;
+		if (lag)
 		{
-			b = p >> (31 - i);
+			b = n >> (31 - i);
 			_putchar(b + 48);
-			count++;
+			number++;
 		}
 	}
-	if (count == 0)
+	if (number == 0)
 	{
-		count++;
+		number++;
 		_putchar('0');
 	}
-	return (count);
+	return (number);
 }

@@ -10,7 +10,7 @@
 int _printint(va_list var_list)
 {
 	int numb = va_arg(var_list, int);
-	int counter_pow, last, temp_pow, digit, temp_numb, pow = 0, len = 0;
+	int counter_pow, last, digit, temp_numb, pow = 0, len = 0, exp = 1;
 
 	if (numb < 0)
 	{
@@ -27,21 +27,18 @@ int _printint(va_list var_list)
 	{
 		temp_numb /= 10;
 		pow++;
+		exp *= 10;
 	}
 	temp_numb = numb;
-	temp_pow = pow;
 	counter_pow = pow;
 	for (; counter_pow > 0; counter_pow--)
 	{
-		for (; temp_pow > 0; temp_pow--)
-		{
-			temp_numb /= 10;
-		}
+		temp_numb /= exp;
 		digit = temp_numb % 10;
 		len++;
 		_putchar(digit + '0');
-		temp_pow = pow - 1;
 		temp_numb = numb;
+		exp /= 10;
 	}
 	last = numb % 10;
 	len++;
