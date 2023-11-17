@@ -17,6 +17,11 @@ int _printint(va_list var_list)
 		numb *= -1;
 		_putchar(45);
 	}
+	if (numb == 0)
+	{
+		_putchar(48);
+		return (1);
+	}
 	temp_numb = numb;
 	while (temp_numb > 9)
 	{
